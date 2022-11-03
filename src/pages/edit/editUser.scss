@@ -1,11 +1,11 @@
-.new{
+.editUser{
     width: 100%;
     display: flex;
 
-    .newContainer{
+    .editUserContainer{
         flex: 6;
 
-        .top, 
+        .top,
         .bottom{
             -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
             box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
@@ -41,7 +41,7 @@
 
                     .formInput{
                         width: 40%;
-
+                        
                         label{
                             display: flex;
                             align-items: center;
@@ -58,6 +58,7 @@
                             border: none;
                             border-bottom: 1px solid gray;
                         }
+
                     }
 
                     button{

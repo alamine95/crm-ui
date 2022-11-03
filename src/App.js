@@ -6,6 +6,9 @@ import Liste from "./pages/list/Liste";
 import Login from "./pages/login/Login";
 import New from "./pages/new/New";
 import Single from "./pages/single/Single";
+import EditUsers from "./pages/edit/EditUsers";
+import NewProfile from "./pages/new/NewProfile";
+import ListeProfile from "./pages/profile/ListeProfile";
 
 function App() {
   return (
@@ -19,6 +22,9 @@ function App() {
               <Route index element={<Liste />} />
               <Route path=":userId" element={<Single />} />
               <Route path="new" element={<New />} />
+              <Route path="editUser" element={<EditUsers />} />
+              <Route path="newProfile" element={<NewProfile />} />
+              <Route path="listeProfile" element={<ListeProfile />} />
             </Route>
             <Route path="products">
               <Route index element={<Liste />} />

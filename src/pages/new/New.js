@@ -13,7 +13,7 @@ export const New = ({ inputs, title }) => {
       <div className="newContainer">
         <Navbar/>
         <div className="top">
-          <h1>{title}</h1>
+          <h1>Add new user</h1>
         </div>
         <div className="bottom">
           <div className="left">
@@ -25,7 +25,41 @@ export const New = ({ inputs, title }) => {
           </div>
           <div className="right">
             <form action="">
-                Formulaire
+                <div className="formInput">
+                  <label htmlFor="file">
+                    Image: <DriveFolderUploadOutlinedIcon className="icon"/>
+                  </label>
+                  <input type="file" id="file" style={{display:"none"}}/>
+                </div>
+                <div className="formInput">
+                  <label>Username</label>
+                  <input type="text" placeholder="John_doe" />
+                </div>
+                <div className="formInput">
+                  <label>Name and surname</label>
+                  <input type="text" placeholder="John doe" />
+                </div>
+                <div className="formInput">
+                  <label>Email</label>
+                  <input type="email" placeholder="lamda@gmail.com" />
+                </div>
+                <div className="formInput">
+                  <label>Phone</label>
+                  <input type="text" placeholder="+221 77 832 65 42" />
+                </div>
+                <div className="formInput">
+                  <label>Password</label>
+                  <input type="password" />
+                </div>
+                <div className="formInput">
+                  <label>Addresse</label>
+                  <input type="text" placeholder="Colobane Dakar"/>
+                </div>
+                <div className="formInput">
+                  <label>Country</label>
+                  <input type="password" placeholder="Senegal" />
+                </div>
+                <button>Send</button>
             </form>
           </div>
         </div>

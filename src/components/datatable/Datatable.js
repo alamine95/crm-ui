@@ -48,7 +48,7 @@ const Datatable = () => {
                 rowsPerPageOptions={[9]}
                 checkboxSelection
             />
-    </div>
+        </div>
     </div>
   )
 }
