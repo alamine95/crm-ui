@@ -59,7 +59,7 @@ const ListeProfile = () => {
             );
           },
         },
-    ];
+  ];
 
   return (
     <div className="listeProfile">

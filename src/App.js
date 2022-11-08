@@ -9,6 +9,8 @@ import Single from "./pages/single/Single";
 import EditUsers from "./pages/edit/EditUsers";
 import NewProfile from "./pages/new/NewProfile";
 import ListeProfile from "./pages/profile/ListeProfile";
+import Contact from "./pages/contact/Contact";
+import AddContact from "./pages/contact/AddContact";
 
 function App() {
   return (
@@ -26,10 +28,10 @@ function App() {
               <Route path="newProfile" element={<NewProfile />} />
               <Route path="listeProfile" element={<ListeProfile />} />
             </Route>
-            <Route path="products">
-              <Route index element={<Liste />} />
+            <Route path="contacts">
+              <Route index element={<Contact />} />
               <Route path=":productId" element={<Single />} />
-              <Route path="new" element={<New />} />
+              <Route path="new" element={<AddContact />} />
             </Route>
           </Route>
           {/* <Route path="/register" element={<Register />} /> */}

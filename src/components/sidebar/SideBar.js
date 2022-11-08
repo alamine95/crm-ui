@@ -11,6 +11,7 @@ import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 import AssignmentTurnedInOutlinedIcon from '@mui/icons-material/AssignmentTurnedInOutlined';
 import PermContactCalendarOutlinedIcon from '@mui/icons-material/PermContactCalendarOutlined';
 import AddBusinessOutlinedIcon from '@mui/icons-material/AddBusinessOutlined';
+import { Link } from "react-router-dom";
 
 export const SideBar = () => {
   return (
@@ -24,16 +25,22 @@ export const SideBar = () => {
                 <p className="title">MAIN</p>
                 <li>
                     <DashboardIcon className="icon"/>
-                    <span>Dashboard</span>
+                    <Link to="/" style={{ textDecoration: "none"}}>
+                        <span>Dashboard</span>
+                    </Link>
                 </li>
                 <p className="title">LISTS</p>
                 <li>
                     <PersonOutlineOutlinedIcon className="icon"/>
-                    <span>Users</span>
+                    <Link to="/users" style={{ textDecoration: "none"}}>
+                        <span>Users</span>
+                    </Link>
                 </li>
                 <li>
                     <PermContactCalendarOutlinedIcon className="icon"/>
-                    <span>Contacts</span>
+                    <Link to="/contacts" style={{ textDecoration: "none"}}>
+                        <span>Contacts</span>
+                    </Link>
                 </li>
                 <li>
                     <AddBusinessOutlinedIcon className="icon"/>

@@ -1,9 +1,21 @@
-.listeProfile{
+.listeContact{
     display: flex;
     width: 100%;
 
-    .listeProfileContainer{
+    .listeContactContainer{
         flex: 6;
+
+        .top{
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+            padding: 10px;
+            margin: 50px;
+            display: flex;
+
+            .modalbtn{
+                margin: 10px;
+            }
+        }
 
         .datatable{
             height: 600px;
@@ -11,6 +23,7 @@
             margin: 50px;
             -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
             box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+
 
             .datatableTitle{
                 width: 100%;
@@ -26,7 +39,7 @@
                     color: green;
                     font-style: 16px;
                     font-weight: 400;
-                    border: 1px solid green;
+                    border: 1px solide green;
                     padding: 5px;
                     border-radius: 5px;
                     cursor: pointer;

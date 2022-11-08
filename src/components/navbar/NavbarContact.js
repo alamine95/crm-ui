@@ -1,17 +1,15 @@
-// import React from 'react'
-import "./navbar.scss"
+import React from 'react'
+import "./navbarContact.scss";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
-import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import PortraitOutlinedIcon from '@mui/icons-material/PortraitOutlined';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-export const  Navbar = () => {
+const NavbarContact = () => {
   return (
     <div className="navbar">
         <div className="wrapper">
@@ -25,7 +23,6 @@ export const  Navbar = () => {
                     <Link to="/users" >
                         Utilisateurs
                     </Link>
-                    
                 </div>
                 <div className="item">
                     <PortraitOutlinedIcon className="icon"/>
@@ -59,4 +56,4 @@ export const  Navbar = () => {
   )
 }
 
-export default Navbar;
+export default NavbarContact

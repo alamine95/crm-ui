@@ -57,7 +57,7 @@ export const New = ({ inputs, title }) => {
                 </div>
                 <div className="formInput">
                   <label>Country</label>
-                  <input type="password" placeholder="Senegal" />
+                  <input type="text" placeholder="Senegal" />
                 </div>
                 <button>Send</button>
             </form>
