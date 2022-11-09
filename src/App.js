@@ -11,6 +11,7 @@ import NewProfile from "./pages/new/NewProfile";
 import ListeProfile from "./pages/profile/ListeProfile";
 import Contact from "./pages/contact/Contact";
 import AddContact from "./pages/contact/AddContact";
+import Opportunity from "./pages/opportunity/Opportunity";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               <Route index element={<Contact />} />
               <Route path=":productId" element={<Single />} />
               <Route path="new" element={<AddContact />} />
+              <Route path="opportunity" element={<Opportunity />} />
             </Route>
           </Route>
           {/* <Route path="/register" element={<Register />} /> */}
