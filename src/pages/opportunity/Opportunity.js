@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import "./opportunity.scss";
 import NavbarContact from '../../components/navbar/NavbarContact';
 import SideBar from '../../components/sidebar/SideBar';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import { v4 as uuidv4 } from "uuid";
+
+import BoardContent from './BoardContentt/BoardContent';
 
 const Opportunity = () => {
   return (
@@ -11,6 +11,7 @@ const Opportunity = () => {
         <SideBar/>
         <div className="opportunityContainer">
             <NavbarContact/>
+            <BoardContent/>
         </div>
     </div>
   )
