@@ -5,8 +5,7 @@ import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlin
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
-import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
-import PortraitOutlinedIcon from '@mui/icons-material/PortraitOutlined';
+import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import { Link } from 'react-router-dom';
 
 const NavbarContact = () => {
@@ -18,17 +17,43 @@ const NavbarContact = () => {
                 <SearchOutlinedIcon/>
             </div>
             <div className="items">
-                <div className="item">
-                    <Person2OutlinedIcon className="icon"/>
-                    <Link to="/users" >
-                        Utilisateurs
-                    </Link>
+            <div className="item">
+                    <KeyboardArrowDownOutlinedIcon className="icon"/>
+                    {/* <Link to="/users" > */}
+                        <div className="dropdown">
+                            <span>Rendez-Vous</span>
+                            <div className="dropdown-content">
+                                <Link>Afficher</Link><br />
+                                <Link>Planifier</Link>
+                            </div>
+                        </div>
+                    {/* </Link> */}
                 </div>
                 <div className="item">
-                    <PortraitOutlinedIcon className="icon"/>
-                    <Link to="/users/listeProfile" >
-                        Profile
-                    </Link>
+                    <KeyboardArrowDownOutlinedIcon className="icon"/>
+                    {/* <Link to="/users" > */}
+                        <div className="dropdown">
+                            <span>Opportunity</span>
+                            <div className="dropdown-content">
+                                <Link to="">Nouveau</Link><br />
+                                <Link to="/contacts/opportunity">Afficher</Link>
+                            </div>
+                        </div>
+                    {/* </Link> */}
+                </div>
+                <div className="item">
+                    <KeyboardArrowDownOutlinedIcon className="icon"/>
+                    {/* <Link to="/users/listeProfile" > */}
+                        <div className="dropdown">
+                            <span>Contact</span>
+                            <div className="dropdown-content">
+                                <Link to="/contacts/new">Creer</Link><br />
+                                <Link to="">Importer</Link><br />
+                                <Link to="/contacts">Lister</Link>
+                            </div>
+                        </div>
+
+                    {/* </Link> */}
                 </div>
                 <div className="item">
                     <FullscreenExitOutlinedIcon className="icon"/>

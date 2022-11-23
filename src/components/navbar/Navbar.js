@@ -1,14 +1,11 @@
 // import React from 'react'
 import "./navbar.scss"
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
-import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
-import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
-import PortraitOutlinedIcon from '@mui/icons-material/PortraitOutlined';
+import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import { Link } from "react-router-dom";
 
 export const  Navbar = () => {
@@ -21,17 +18,43 @@ export const  Navbar = () => {
             </div>
             <div className="items">
                 <div className="item">
-                    <Person2OutlinedIcon className="icon"/>
+                    {/* <Person2OutlinedIcon className="icon"/>
                     <Link to="/users" >
                         Utilisateurs
-                    </Link>
+                    </Link> */}
+
+                    <KeyboardArrowDownOutlinedIcon className="icon"/>
+                    {/* <Link to="/users" > */}
+                        <div className="dropdown">
+                            <span>Utilisateurs</span>
+                            <div className="dropdown-content">
+                                <Link to="/users/new">Creer</Link><br />
+                                <Link>Importer</Link><br />
+                                <Link to="/users">Lister</Link>
+                            </div>
+                        </div>
+
+                    {/* </Link> */}
                     
                 </div>
                 <div className="item">
-                    <PortraitOutlinedIcon className="icon"/>
+                    {/* <PortraitOutlinedIcon className="icon"/>
                     <Link to="/users/listeProfile" >
                         Profile
-                    </Link>
+                    </Link> */}
+
+                    <KeyboardArrowDownOutlinedIcon className="icon"/>
+                    {/* <Link to="/users" > */}
+                        <div className="dropdown">
+                            <span>Profile</span>
+                            <div className="dropdown-content">
+                                <Link to="/users/newProfile">Creer</Link> <br />
+                                <Link to="/users/listeProfile">Afficher</Link>
+                            </div>
+                        </div>
+
+                    {/* </Link> */}
+
                 </div>
                 <div className="item">
                     <FullscreenExitOutlinedIcon className="icon"/>

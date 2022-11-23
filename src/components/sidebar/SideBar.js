@@ -12,12 +12,16 @@ import AssignmentTurnedInOutlinedIcon from '@mui/icons-material/AssignmentTurned
 import PermContactCalendarOutlinedIcon from '@mui/icons-material/PermContactCalendarOutlined';
 import AddBusinessOutlinedIcon from '@mui/icons-material/AddBusinessOutlined';
 import { Link } from "react-router-dom";
+import logo from "../../images/logo.png";
+import logo1 from "../../images/logo1.png";
+import logo2 from "../../images/logo2.png";
 
 export const SideBar = () => {
   return (
     <div className='sidebar'>
         <div className="top">
-            <span className='logo'>crmadmin</span>
+            {/* <span className='logo'>crmadmin</span> */}
+            <img src={logo2} alt="" style={{ width: "100%", height: "82px"}} />
         </div>
         <hr />
         <div className="center">

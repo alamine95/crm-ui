@@ -1,9 +1,9 @@
 import React from 'react'
 import "./addContact.scss";
-import Navbar from '../../components/navbar/Navbar';
 import SideBar from '../../components/sidebar/SideBar';
 import DriveFolderUploadOutlinedIcon from '@mui/icons-material/DriveFolderUploadOutlined';
 import { useState } from 'react';
+import NavbarContact from '../../components/navbar/NavbarContact';
 
 const AddContact = () => {
     const [file] = useState("");
@@ -11,7 +11,7 @@ const AddContact = () => {
     <div className="addContact">
         <SideBar/>
         <div className="addContactsContainer">
-            <Navbar/>
+            <NavbarContact/>
             <div className="top">
                 <h1>Add New Contact</h1>
             </div>
