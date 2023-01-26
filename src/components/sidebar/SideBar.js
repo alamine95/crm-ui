@@ -37,7 +37,7 @@ export const SideBar = () => {
                 <li>
                     <PersonOutlineOutlinedIcon className="icon"/>
                     <Link to="/users" style={{ textDecoration: "none"}}>
-                        <span>Users</span>
+                        <span>Admin</span>
                     </Link>
                 </li>
                 <li>

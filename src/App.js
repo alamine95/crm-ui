@@ -12,6 +12,7 @@ import ListeProfile from "./pages/profile/ListeProfile";
 import Contact from "./pages/contact/Contact";
 import AddContact from "./pages/contact/AddContact";
 import Opportunity from "./pages/opportunity/Opportunity";
+import EditContact from "./pages/contact/EditContact";
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/">
-            <Route index element={<Home />} />
-              <Route path="login" element={<Login />} />
+            <Route index element={<Login />} />
+            <Route path="/admin" element={<Home />} />
             <Route path="users">
               <Route index element={<Liste />} />
               <Route path=":userId" element={<Single />} />
@@ -33,11 +34,12 @@ function App() {
               <Route index element={<Contact />} />
               <Route path=":productId" element={<Single />} />
               <Route path="new" element={<AddContact />} />
+              <Route path="editContact" element={<EditContact />} />
               <Route path="opportunity" element={<Opportunity />} />
             </Route>
           </Route>
           {/* <Route path="/register" element={<Register />} /> */}
-          <Route path="/admin" element={<Admin />} />
+          {/* <Route path="/admin" element={<Admin />} /> */}
         </Routes>
       </div>
     </BrowserRouter>

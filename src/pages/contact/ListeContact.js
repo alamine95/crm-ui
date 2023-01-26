@@ -57,7 +57,7 @@ const ListeContact = () => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to="" style={{ textDecoration: "none"}}>
+            <Link to="/contacts/editContact" style={{ textDecoration: "none"}}>
               <div className="viewButton">View</div>
             </Link>
             <div className="deleteButton" onClick={() => handleDelete(params.row.id)}>
@@ -112,7 +112,7 @@ const ListeContact = () => {
         </div>
       </div>
       {/* Modal for Create task */}
-      <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1'>
+      <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1' staticBackdrop>
         <MDBModalDialog>
           <MDBModalContent>
             <MDBModalHeader>
@@ -140,7 +140,7 @@ const ListeContact = () => {
       </MDBModal>
 
       {/* Modal for Email */}
-      <MDBModal show={emailModal} setShow={setEmailModal} tabIndex='-1'>
+      <MDBModal show={emailModal} setShow={setEmailModal} tabIndex='-1' staticBackdrop>
         <MDBModalDialog>
           <MDBModalContent>
             <MDBModalHeader>
@@ -168,7 +168,7 @@ const ListeContact = () => {
       </MDBModal>
 
       {/* Modal for Rendez-Vous */}
-      <MDBModal show={rendezVousModal} setShow={setRendezVousModal} tabIndex='-1'>
+      <MDBModal show={rendezVousModal} setShow={setRendezVousModal} tabIndex='-1' staticBackdrop>
         <MDBModalDialog>
           <MDBModalContent>
             <MDBModalHeader>

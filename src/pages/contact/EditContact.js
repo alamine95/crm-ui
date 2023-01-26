@@ -1,47 +1,47 @@
 import React from 'react'
-import Navbar from '../../components/navbar/Navbar';
+import NavbarContact from '../../components/navbar/NavbarContact';
 import SideBar from '../../components/sidebar/SideBar';
-import "./editUser.scss";
+import './editContact.scss';
 import { useState } from 'react';
 import DriveFolderUploadOutlinedIcon from '@mui/icons-material/DriveFolderUploadOutlined';
 
-const EditUsers = () => {
-    const [file, setFie ] = useState("");
+const EditContact = () => {
+    const [file, setFile] = useState("");
   return (
-    <div className="editUser">
+    <div className='editContact'>
         <SideBar/>
-        <div className="editUserContainer">
-            <Navbar/>
+        <div className="editContactContainer">
+            <NavbarContact/>
             <div className="top">
-                <h1>Edit single User</h1>
+                <h1>Edit Single Contact</h1>
             </div>
             <div className="bottom">
                 <div className="left">
-                <img src={
-                    file
-                    ? URL.createObjectURL(file)
-                    : "https://icon-library.com/images/no-image-icon-0.jpg"
-                } alt="" />
+                    <img src={
+                        file
+                        ? URL.createObjectURL(file)
+                        : "https://icon-library.com/images/no-image-icon-0.jpg"
+                    } alt="" />
                 </div>
                 <div className="right">
                     <form action="">
                         <div className="formInput">
-                            <label htmlFor="file">
+                            <label htmlFor="">
                                 Image: <DriveFolderUploadOutlinedIcon className="icon"/>
                             </label>
-                            <input type="file" id="file" style={{display:"none"}}/>
+                            <input type="file" id="file" style={{display: "none"}} />
                         </div>
                         <div className="formInput">
-                            <label>Username</label>
-                            <input type="text" placeholder='John_doe' />
+                            <label htmlFor="">Username</label>
+                            <input type="text" placeholder='Lamda' />
                         </div>
                         <div className="formInput">
-                            <label>Name And surname</label>
-                            <input type="text" placeholder='John doe' />
+                            <label htmlFor="">Name And surname</label>
+                            <input type="text" placeholder='Lamine Sow' />
                         </div>
                         <div className="formInput">
-                            <label>Email</label>
-                            <input type="emal" placeholder='lamda@gmail.com' />
+                            <label htmlFor="">Email</label>
+                            <input type="text" placeholder='Lamine Sow' />
                         </div>
                         <div className="formInput">
                             <label>Phone</label>
@@ -68,4 +68,4 @@ const EditUsers = () => {
   )
 }
 
-export default EditUsers
+export default EditContact

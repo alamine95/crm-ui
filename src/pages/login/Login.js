@@ -11,6 +11,7 @@ import {
     MDBCheckbox } from "mdb-react-ui-kit";
 
 import logo from "../../images/logo.png";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
@@ -35,7 +36,9 @@ const Login = () => {
                 <a href="!#">Forgot password?</a>
               </div>
 
-              <MDBBtn className="mb-4 w-100" style={{backgroundColor: '#274472'}}>Sign in</MDBBtn>
+              <Link to="/admin">
+                <MDBBtn className="mb-4 w-100" style={{backgroundColor: '#274472'}}>Sign in</MDBBtn>             
+              </Link>
 
             </MDBCardBody>
 
