@@ -32,34 +32,35 @@ const EditContact = () => {
                             <input type="file" id="file" style={{display: "none"}} />
                         </div>
                         <div className="formInput">
-                            <label htmlFor="">Username</label>
+                            <label htmlFor="">Nom:</label>
                             <input type="text" placeholder='Lamda' />
                         </div>
                         <div className="formInput">
-                            <label htmlFor="">Name And surname</label>
+                            <label htmlFor="">Prenom:</label>
                             <input type="text" placeholder='Lamine Sow' />
                         </div>
                         <div className="formInput">
-                            <label htmlFor="">Email</label>
+                            <label htmlFor="">Email:</label>
                             <input type="text" placeholder='Lamine Sow' />
                         </div>
                         <div className="formInput">
-                            <label>Phone</label>
+                            <label>Telephone:</label>
                             <input type="text" placeholder='+221 77 890 70 85' />
                         </div>
                         <div className="formInput">
-                            <label>Password</label>
+                            <label>Type de Contact:</label>
                             <input type="password"/>
                         </div>
                         <div className="formInput">
-                            <label>Addresse</label>
+                            <label>Genre:</label>
                             <input type="text" placeholder='Colobane Dakar' />
                         </div>
                         <div className="formInput">
-                            <label>Country</label>
+                            <label>Addresse</label>
                             <input type="text" placeholder='Senegal' />
                         </div>
                         <button>Update</button>
+                        <button>Clear</button>
                     </form>
                 </div>
             </div>

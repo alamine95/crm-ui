@@ -3,17 +3,10 @@ import "./listeContact.scss";
 import { DataGrid } from '@mui/x-data-grid';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import {
-  MDBBtn,
-  MDBModal,
-  MDBModalDialog,
-  MDBModalContent,
-  MDBModalHeader,
-  MDBModalTitle,
-  MDBInput,
-  MDBModalBody,
-  MDBModalFooter,
-} from 'mdb-react-ui-kit';
+import { MDBBtn } from 'mdb-react-ui-kit';
+import TacheModal from './modal/TacheModal';
+import SendEmailModal from './modal/SendEmailModal';
+import RendezVousModal from './modal/RendezVousModal';
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
@@ -69,13 +62,16 @@ const ListeContact = () => {
     }
   ];
 
-  const [basicModal, setBasicModal] = useState(false);
-  const [emailModal, setEmailModal] = useState(false);
-  const [rendezVousModal, setRendezVousModal] = useState(false);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-  const toggleShow = () => setBasicModal(!basicModal);
-  const emailToggleShow = () => setEmailModal(!emailModal);
-  const rendezVousToggleShow = () => setRendezVousModal(!rendezVousModal);
+  // const [emailModal, setEmailModal] = useState(false);
+  //const [rendezVousModal, setRendezVousModal] = useState(false);
+
+  // //const toggleShow = () => setBasicModal(!basicModal);
+  // const emailToggleShow = () => setEmailModal(!emailModal);
+  //const rendezVousToggleShow = () => setRendezVousModal(!rendezVousModal);
 
   return (
     <>
@@ -83,13 +79,16 @@ const ListeContact = () => {
         <div className="listeContactContainer">
           <div className="top">
             <div className="modalbtn">
-              <MDBBtn onClick={toggleShow}>Tache</MDBBtn>
+              <MDBBtn onClick={handleShow}>Tache</MDBBtn>
+              <TacheModal show={show} handleClose={handleClose}/>
             </div>
             <div className="modalbtn">
-              <MDBBtn onClick={emailToggleShow}>Email</MDBBtn>
+              <MDBBtn onClick={handleShow}>Email</MDBBtn>
+              <SendEmailModal show={show} handleClose={handleClose}/>
             </div>
             <div className="modalbtn">
-              <MDBBtn onClick={rendezVousToggleShow}>Rendez-Vous</MDBBtn>
+              <MDBBtn onClick={handleShow}>Rendez-Vous</MDBBtn>
+              <RendezVousModal show={show} handleClose={handleClose}/>
             </div>
           </div>
             <div className="datatable">
@@ -111,89 +110,6 @@ const ListeContact = () => {
             </div>
         </div>
       </div>
-      {/* Modal for Create task */}
-      <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1' staticBackdrop>
-        <MDBModalDialog>
-          <MDBModalContent>
-            <MDBModalHeader>
-              <MDBModalTitle>Creer Tache</MDBModalTitle>
-              <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
-            </MDBModalHeader>
-            <MDBModalBody>
-              <form>
-                  <MDBInput id='form4Example1' wrapperClass='mb-4' label='Lieu' />
-                  <MDBInput type='date' id='form4Example2' wrapperClass='mb-4' label='Date' />
-                  <MDBInput type='time' id='form4Example2' wrapperClass='mb-4' />
-                  <MDBInput wrapperClass='mb-4' textarea id='form4Example3' rows={4} label='Task title' />
-                  <MDBBtn type='submit' className='mb-4' block>
-                    Create
-                  </MDBBtn>
-              </form>
-            </MDBModalBody>
-            <MDBModalFooter>
-              <MDBBtn color='secondary' onClick={toggleShow}>
-                Close
-              </MDBBtn>
-            </MDBModalFooter>
-          </MDBModalContent>
-        </MDBModalDialog>
-      </MDBModal>
-
-      {/* Modal for Email */}
-      <MDBModal show={emailModal} setShow={setEmailModal} tabIndex='-1' staticBackdrop>
-        <MDBModalDialog>
-          <MDBModalContent>
-            <MDBModalHeader>
-              <MDBModalTitle>Send Email</MDBModalTitle>
-              <MDBBtn className='btn-close' color='none' onClick={emailToggleShow}></MDBBtn>
-            </MDBModalHeader>
-            <MDBModalBody>
-              <form>
-                  <MDBInput type='email' id='form4Example1' wrapperClass='mb-4' label='Destinataire' />
-                  <MDBInput type='text' id='form4Example2' wrapperClass='mb-4' label='Object' />
-                  <MDBInput wrapperClass='mb-4' textarea id='form4Example3' rows={4} label='Message' />
-                  <MDBInput type='file' id='form4Example2' wrapperClass='mb-4'/>
-                  <MDBBtn type='submit' className='mb-4' block>
-                    Send Email
-                  </MDBBtn>
-              </form>
-            </MDBModalBody>
-            <MDBModalFooter>
-              <MDBBtn color='secondary' onClick={emailToggleShow}>
-                Close
-              </MDBBtn>
-            </MDBModalFooter>
-          </MDBModalContent>
-        </MDBModalDialog>
-      </MDBModal>
-
-      {/* Modal for Rendez-Vous */}
-      <MDBModal show={rendezVousModal} setShow={setRendezVousModal} tabIndex='-1' staticBackdrop>
-        <MDBModalDialog>
-          <MDBModalContent>
-            <MDBModalHeader>
-              <MDBModalTitle>Fixer Rendez-Vous</MDBModalTitle>
-              <MDBBtn className='btn-close' color='none' onClick={rendezVousToggleShow}></MDBBtn>
-            </MDBModalHeader>
-            <MDBModalBody>
-              <form>
-                  <MDBInput type='text' id='form4Example1' wrapperClass='mb-4' label='Lieu'/>
-                  <MDBInput type='date' id='form4Example2' wrapperClass='mb-4' label='date'/>
-                  <MDBInput type='time' id='form4Example2' wrapperClass='mb-4'/>
-                  <MDBInput wrapperClass='mb-4' textarea id='form4Example3' rows={4} label='Message' />
-                  <MDBBtn type='submit' className='mb-4' block>
-                    Send
-                  </MDBBtn>
-              </form>
-            </MDBModalBody>
-            <MDBModalFooter>
-              <MDBBtn color='secondary' onClick={rendezVousToggleShow}>
-                Close
-              </MDBBtn>
-            </MDBModalFooter>
-          </MDBModalContent>
-        </MDBModalDialog>
-      </MDBModal>
     </>
   )
 }

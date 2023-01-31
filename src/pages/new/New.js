@@ -26,40 +26,31 @@ export const New = ({ inputs, title }) => {
           <div className="right">
             <form action="">
                 <div className="formInput">
-                  <label htmlFor="file">
-                    Image: <DriveFolderUploadOutlinedIcon className="icon"/>
-                  </label>
-                  <input type="file" id="file" style={{display:"none"}}/>
-                </div>
-                <div className="formInput">
-                  <label>Username</label>
+                  <label>Nom:</label>
                   <input type="text" placeholder="John_doe" />
                 </div>
                 <div className="formInput">
-                  <label>Name and surname</label>
+                  <label>Prenom:</label>
                   <input type="text" placeholder="John doe" />
                 </div>
                 <div className="formInput">
-                  <label>Email</label>
+                  <label>Email:</label>
                   <input type="email" placeholder="lamda@gmail.com" />
                 </div>
                 <div className="formInput">
-                  <label>Phone</label>
+                  <label>Phone:</label>
                   <input type="text" placeholder="+221 77 832 65 42" />
                 </div>
                 <div className="formInput">
-                  <label>Password</label>
+                  <label>Password:</label>
                   <input type="password" />
                 </div>
                 <div className="formInput">
-                  <label>Addresse</label>
+                  <label>Profile:</label>
                   <input type="text" placeholder="Colobane Dakar"/>
                 </div>
-                <div className="formInput">
-                  <label>Country</label>
-                  <input type="text" placeholder="Senegal" />
-                </div>
                 <button>Send</button>
+                <button>Clear</button>
             </form>
           </div>
         </div>
