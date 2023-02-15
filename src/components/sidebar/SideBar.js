@@ -52,7 +52,9 @@ export const SideBar = () => {
                 </li>
                 <li>
                     <AssignmentTurnedInOutlinedIcon className="icon"/>
-                    <span>Rendez-vous</span>
+                    <Link to="/campagnes" style={{ textDecoration: "none" }}>
+                        <span>Campagne</span>
+                    </Link>
                 </li>
                 <p className="title">USEFUL</p>
                 <li>

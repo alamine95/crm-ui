@@ -53,6 +53,7 @@ const AddContact = () => {
 
 
     const [file] = useState("");
+    
   return (
     <div className="addContact">
         <SideBar/>
@@ -126,9 +127,9 @@ const AddContact = () => {
                                 onChange={(e) => handleChange(e)}
                             required/>
                         </div>
-                        <button onClick={saveContact}>Send</button>
+                        <button className="btnSave" onClick={saveContact}>Send</button>
                         <ToastContainer  autoClose={2000}/>
-                        <button onClick={reset}>Clear</button>
+                        <button className="btnClear" onClick={reset}>Clear</button>
                     </form>
                 </div>
             </div>

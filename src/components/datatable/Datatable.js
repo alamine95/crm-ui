@@ -1,55 +1,67 @@
 import React from 'react'
 import "./datatable.scss";
-import { DataGrid } from '@mui/x-data-grid';
-import { userColumns, userRows } from '../../datatablesource.js';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import Table from 'react-bootstrap/Table';
 
 const Datatable = () => {
-  const [data, setData] = useState(userRows);
-
-  const handleDelete = (id) => {
-    setData(data.filter((item)=> item.id !== id));
-  };
-
-  const actionColumn = [
-    {
-      field: "action",
-      headerName: "Action",
-      width: 200,
-      renderCell: (params) => {
-        return (
-          <div className="cellAction">
-            <Link to="/users/test" style={{ textDecoration: "none"}}>
-              <div className="viewButton">View</div>
-            </Link>
-            <div className="deleteButton" onClick={() => handleDelete(params.row.id)}>
-              Delete
-            </div>
-          </div>
-        );
-      },
-    },
-  ];
 
   return (
-    <div className="datatable">
-        <div className="datatable">
-          <div className="datatableTitle">
-            Add New User
-            <Link to="/users/new" className="link">
-              Add New
-            </Link>
-          </div>
-            <DataGrid
-                rows={data}
-                columns={userColumns.concat(actionColumn)}
-                pageSize={9}
-                rowsPerPageOptions={[9]}
-                checkboxSelection
-            />
+    <>
+      <div className="listeUsers">
+        <div className="listeUsersContainer">
+            <div className="datatable">
+              <div className="datatableTitle">
+                Add New User
+                <Link to="/users/new" className="link">
+                  Add New
+                </Link>
+              </div>
+              <Table striped>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td className="cellAction">
+                      <button className="viewButton">View</button>
+                      <button className="deleteButton">Update</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td className="cellAction">
+                      <button className="viewButton">View</button>
+                      <button className="deleteButton">Update</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td colSpan={2}>Larry the Bird</td>
+                    <td>@twitter</td>
+                    <td className="cellAction">
+                      <button className="viewButton">View</button>
+                      <button className="deleteButton">Update</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </Table>
+            </div>
         </div>
-    </div>
+      </div>
+    </>
   )
 }
 

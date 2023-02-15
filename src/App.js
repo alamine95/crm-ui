@@ -13,6 +13,7 @@ import Contact from "./pages/contact/Contact";
 import AddContact from "./pages/contact/AddContact";
 import Opportunity from "./pages/opportunity/Opportunity";
 import EditContact from "./pages/contact/EditContact";
+import Campagne from "./pages/campagne/Campagne";
 
 function App() {
   return (
@@ -33,9 +34,12 @@ function App() {
             <Route path="contacts">
               <Route index element={<Contact />} />
               <Route path=":productId" element={<Single />} />
-              <Route path="new" element={<AddContact />} />
-              <Route path="editContact" element={<EditContact />} />
+              <Route path="new" element={<AddContact />} /> 
+              <Route path="editContact/:id" element={<EditContact />} />
               <Route path="opportunity" element={<Opportunity />} />
+            </Route>
+            <Route path="campagnes">
+              <Route index element={<Campagne />} />
             </Route>
           </Route>
           {/* <Route path="/register" element={<Register />} /> */}

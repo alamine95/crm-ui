@@ -16,7 +16,7 @@ class ContactService {
     }
 
     updateContact(contact, id){
-        return axios.put(CONTACT_API_BASE_URI + "/" +id, contact);
+        return axios.post(CONTACT_API_BASE_URI + "/" +id, contact);
     }
 
     deleteContact(id){

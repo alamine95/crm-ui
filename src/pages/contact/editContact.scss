@@ -61,11 +61,24 @@
                         }
                     }
 
-                    button{
+                    .btnUpdate{
                         width: 150px;
                         padding: 10px;
                         border: none;
+                        border-radius: 30px;
                         background-color: teal;
+                        color: white;
+                        font-weight: bold;
+                        cursor: pointer;
+                        margin-top: 10px;
+                    }
+
+                    .btnClear{
+                        width: 150px;
+                        padding: 10px;
+                        border: none;
+                        border-radius: 30px;
+                        background-color: crimson;
                         color: white;
                         font-weight: bold;
                         cursor: pointer;

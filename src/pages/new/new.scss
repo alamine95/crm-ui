@@ -60,15 +60,36 @@
                         }
                     }
 
-                    button{
+                    .btnSend{
                         width: 150px;
                         padding: 10px;
                         border: none;
+                        border-radius: 30px;
                         background-color: teal;
                         color: white;
                         font-weight: bold;
                         cursor: pointer;
                         margin-top: 10px;
+                    }
+
+                    .btnSend:hover{
+                        background-color: rgb(7, 77, 77);
+                    }
+
+                    .btnClear{
+                        width: 150px;
+                        padding: 10px;
+                        border: none;
+                        border-radius: 30px;
+                        background-color: crimson;
+                        color: white;
+                        font-weight: bold;
+                        cursor: pointer;
+                        margin-top: 10px;
+                    }
+
+                    .btnClear:hover{
+                        background-color: rgb(247, 34, 76);
                     }
                 }
             }
