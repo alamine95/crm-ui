@@ -10,12 +10,15 @@ import {
     MDBModalBody,
     MDBModalFooter
   } from 'mdb-react-ui-kit';
+import { toast, ToastContainer } from 'react-toastify';
+import CampagneService from '../../../services/CampagneService';
 
 const AddCampagne = ({ show, handleClose}) => {
 
     const [formData, setFormData] =useState({
         nom: "",
         dateDebut: "",
+        type: "",
         etape: "",
         dateFin: ""
     })
@@ -27,6 +30,19 @@ const AddCampagne = ({ show, handleClose}) => {
         }, console.log(formData));
     };
 
+    const saveCampagne = (e) => {
+      e.preventDefault();
+      CampagneService.saveCampagne(formData)
+        .then((response) => {
+          console.log(response);
+          toast.success('Campagne ajouter close modal');
+        })
+        .catch((error) => {
+          console.log(error);
+          toast.error('Error Notification');
+        })
+    }
+
 
     const reset = (e) => {
         e.preventDefault();
@@ -34,6 +50,7 @@ const AddCampagne = ({ show, handleClose}) => {
             nom: "",
             dateDebut: "",
             chiffreAttendue: "",
+            type: "",
             etape: "",
             dateFin: ""
         });
@@ -74,22 +91,32 @@ const AddCampagne = ({ show, handleClose}) => {
                       <option value="Encour">Encour</option>
                       <option value="Terminer">Terminer</option>
                   </select>
+                  <select className="form-select mb-4" aria-label="Default select example" name="type" 
+                    required
+                    value={formData.type}
+                    onChange={handleChange}
+                  >
+                      <option selected>Type Campagne</option>
+                      <option value="Marketing">Marketing</option>
+                      <option value="Commercial">Commerciale</option>
+                  </select>
                   <MDBInput type='date' wrapperClass='mb-4' label='date fin' name='dateFin' 
                     required
                     value={formData.dateFin}
                     onChange={handleChange}
                   />
                   
-                  <MDBBtn type='submit' className='mb-4' block>
+                  <MDBBtn type='submit' className='mb-4' onClick={saveCampagne} block>
                     Create
                   </MDBBtn>
+                  <ToastContainer autoClose={2000}/>
               </form>
             </MDBModalBody>
             <MDBModalFooter>
               <MDBBtn color='secondary' onClick={handleClose}>
                 Close
               </MDBBtn>
-              <MDBBtn color='danger'>
+              <MDBBtn color='danger' onClick={reset}>
                 Clear
               </MDBBtn>
             </MDBModalFooter>
