@@ -5,6 +5,7 @@ import './listeCampagne.scss';
 import AddCampagne from './modal/AddCampagne';
 import CampagneService from '../../services/CampagneService';
 import AddLeadModal from './modal/AddLeadModal';
+import { useNavigate } from 'react-router-dom';
 
 const ListeCampagne = () => {
 
@@ -18,6 +19,7 @@ const ListeCampagne = () => {
 
     const [loading, setLoading] = useState(true);
     const [campagnes, setCampagnes] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {

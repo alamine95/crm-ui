@@ -11,6 +11,7 @@ import ContactService from '../../services/ContactService';
 import NoteModal from './modal/NoteModal';
 import OpportuniteModal from './modal/OpportuniteModal';
 import { Pagination } from '@mui/material';
+import CreateIcon from '@mui/icons-material/Create';
 
 const ListeContact = () => {
 
@@ -113,7 +114,7 @@ const ListeContact = () => {
                       <td>{contact.type}</td>
                       <td className="cellAction">
                         <button className="viewButton" onClick={(e, id) => editContact(e, contact.id)}>View</button>
-                        <button className="deleteButton" onClick={handleShowNoteModal}>Delete</button>
+                        <button className="deleteButton" onClick={handleShowNoteModal}> <CreateIcon className="icon"/></button>
                         <NoteModal show={showNote} handleClose={handleCloseNoteModal} />
                       </td>
                     </tr>
