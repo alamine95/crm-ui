@@ -6,6 +6,8 @@ import AddCampagne from './modal/AddCampagne';
 import CampagneService from '../../services/CampagneService';
 import AddLeadModal from './modal/AddLeadModal';
 import { useNavigate } from 'react-router-dom';
+import DeleteIcon from '@mui/icons-material/Delete';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 
 const ListeCampagne = () => {
 
@@ -20,6 +22,22 @@ const ListeCampagne = () => {
     const [loading, setLoading] = useState(true);
     const [campagnes, setCampagnes] = useState(null);
     const navigate = useNavigate();
+
+    const editCampagne = (e, id) => {
+        e.preventDefault();
+        navigate(`/campagnes/editCampagne/${id}`);
+    };
+
+    const deleteCampagne = (e, id) => {
+        e.preventDefault();
+        CampagneService.deleteCampagne(id).then((res) => {
+            if(campagnes){
+                setCampagnes((prevElement) =>  {
+                    return prevElement.filter((campagne) => campagne.id !== id);
+                });
+            }
+        });
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -84,8 +102,8 @@ const ListeCampagne = () => {
                                             <td>{campagne.etape}</td>
                                             <td>{campagne.fin}</td>
                                             <td className="cellAction">
-                                                <button className="viewButton">View</button>
-                                                <button className="deleteButton">Delete</button>
+                                                <button className="viewButton" onClick={(e, id) => editCampagne(e, campagne.id)}> <RemoveRedEyeIcon/> </button>
+                                                <button className="deleteButton" onClick={(e, id) => deleteCampagne(e, campagne.id)}> <DeleteIcon/> </button>
                                             </td>
                                         </tr>
                                     ))}

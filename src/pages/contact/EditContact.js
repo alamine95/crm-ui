@@ -7,8 +7,30 @@ import DriveFolderUploadOutlinedIcon from '@mui/icons-material/DriveFolderUpload
 import { useNavigate, useParams } from 'react-router-dom';
 import ContactService from '../../services/ContactService';
 import { toast, ToastContainer } from 'react-toastify';
+import { MDBBtn } from 'mdb-react-ui-kit';
+import RendezVousModal from './modal/RendezVousModal';
+import SendEmailModal from './modal/SendEmailModal';
+import TacheModal from './modal/TacheModal';
+import OpportuniteModal from './modal/OpportuniteModal';
 
 const EditContact = () => {
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const [showEmail, setShowEmail] = useState(false);
+    const handleCloseEmailModal = () => setShowEmail(false);
+    const handleShowEmailModal = () => setShowEmail(true);
+
+    const [showTache, setShowTache] = useState(false);
+    const handleCloseTacheModal = () => setShowTache(false);
+    const handleShowTacheModal = () => setShowTache(true);
+
+    const [showOpportunite, setShowOpportunite] = useState(false);
+    const handleCloseOpportunite = () => setShowOpportunite(false);
+    const handleShowOpportunite = () => setShowOpportunite(true);
+
     const {id} = useParams();
     const [file, setFile] = useState("");
     const navigate = useNavigate();
@@ -60,7 +82,22 @@ const EditContact = () => {
         <div className="editContactContainer">
             <NavbarContact/>
             <div className="top">
-                <h1>Edit Single Contact</h1>
+                <div className="modalbtn">
+                    <MDBBtn onClick={handleShow}>Rendez-vous</MDBBtn>
+                    <RendezVousModal show={show} handleClose={handleClose}/>
+                </div>
+                <div className="modalbtn">
+                    <MDBBtn onClick={handleShowEmailModal}>Email</MDBBtn>
+                    <SendEmailModal show={showEmail} handleClose={handleCloseEmailModal}/>
+                </div>
+                <div className="modalbtn">
+                    <MDBBtn onClick={handleShowTacheModal}>Tache</MDBBtn>
+                    <TacheModal show={showTache} handleClose={handleCloseTacheModal}/>
+                </div>
+                <div className="modalbtn">
+                    <MDBBtn onClick={handleShowOpportunite}>Opportunite</MDBBtn>
+                    <OpportuniteModal show={showOpportunite} handleClose={handleCloseOpportunite}/>
+                </div>
             </div>
             <div className="bottom">
                 <div className="left">

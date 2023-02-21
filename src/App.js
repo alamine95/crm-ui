@@ -14,6 +14,7 @@ import AddContact from "./pages/contact/AddContact";
 import Opportunity from "./pages/opportunity/Opportunity";
 import EditContact from "./pages/contact/EditContact";
 import Campagne from "./pages/campagne/Campagne";
+import ViewCampagne from "./pages/campagne/ViewCampagne";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             </Route>
             <Route path="campagnes">
               <Route index element={<Campagne />} />
+              <Route path="editCampagne/:id" element={<ViewCampagne />} />
             </Route>
           </Route>
           {/* <Route path="/register" element={<Register />} /> */}

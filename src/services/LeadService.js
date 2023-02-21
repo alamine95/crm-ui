@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const LEAD_API_BASE_URI = "http://localhost:3001/api/v1/leads";
+const LEAD_BY_CAMPAGNE_BASE_URI = "http://localhost:3001/api/v1/leads/campagne";
 
 class LeadService {
     saveLead(lead){
@@ -21,6 +22,10 @@ class LeadService {
 
     deleteLead(id){
         return axios.delete(LEAD_API_BASE_URI + "/" +id);
+    }
+
+    getLeadsByCampagneId(id){
+        return axios.get(LEAD_BY_CAMPAGNE_BASE_URI + "/" +id);
     }
 }
 

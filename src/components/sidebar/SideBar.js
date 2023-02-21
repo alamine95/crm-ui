@@ -29,7 +29,7 @@ export const SideBar = () => {
                 <p className="title">MAIN</p>
                 <li>
                     <DashboardIcon className="icon"/>
-                    <Link to="/" style={{ textDecoration: "none"}}>
+                    <Link to="/admin" style={{ textDecoration: "none"}}>
                         <span>Dashboard</span>
                     </Link>
                 </li>

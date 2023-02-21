@@ -12,6 +12,7 @@ import NoteModal from './modal/NoteModal';
 import OpportuniteModal from './modal/OpportuniteModal';
 import { Pagination } from '@mui/material';
 import CreateIcon from '@mui/icons-material/Create';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const ListeContact = () => {
 
@@ -58,6 +59,17 @@ const ListeContact = () => {
     };
     fetchData();
   }, []);
+
+  const deleteContact = (e, id) => {
+    e.preventDefault();
+    ContactService.deleteContact(id).then((res) => {
+      if(contacts){
+        setContacts((prevElement) => {
+          return prevElement.filter((contact) => contact.id !== id);
+        });
+      }
+    });
+  };
 
   return (
     <>
@@ -114,8 +126,7 @@ const ListeContact = () => {
                       <td>{contact.type}</td>
                       <td className="cellAction">
                         <button className="viewButton" onClick={(e, id) => editContact(e, contact.id)}>View</button>
-                        <button className="deleteButton" onClick={handleShowNoteModal}> <CreateIcon className="icon"/></button>
-                        <NoteModal show={showNote} handleClose={handleCloseNoteModal} />
+                        <button className="deleteButton" onClick={(e, id) => deleteContact(e, contact.id)}> <DeleteIcon className="icon"/></button>
                       </td>
                     </tr>
                   ))}

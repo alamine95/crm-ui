@@ -7,6 +7,7 @@ import NavbarContact from '../../components/navbar/NavbarContact';
 import ContactService from '../../services/ContactService';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from 'react-router-dom';
 
 const AddContact = () => {
     const [contact, setContact] = useState({
@@ -20,6 +21,8 @@ const AddContact = () => {
 	    type: ""
     });
 
+    const navigate = useNavigate();
+
     const handleChange = (e) => {
         const value = e.target.value;
         setContact({ ...contact, [e.target.name]: value});
@@ -31,6 +34,7 @@ const AddContact = () => {
             .then((response) => {
                 console.log(response);
                 toast.success('Nouveau Contact Ajouter');
+                navigate("/contacts")
             })
             .catch((error) => {
                 toast.error("Error Notification !");
