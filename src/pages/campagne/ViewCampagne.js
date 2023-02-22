@@ -6,6 +6,8 @@ import CampagneService from '../../services/CampagneService';
 import './viewCampagne.scss';
 import Table from 'react-bootstrap/Table';
 import LeadService from '../../services/LeadService';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 
 const ViewCampagne = () => {
@@ -13,6 +15,12 @@ const ViewCampagne = () => {
     const { id } = useParams();
     const [file, setFile] = useState("");
     const navigate = useNavigate();
+
+    const editLead = (e, id) => {
+        e.preventDefault();
+        navigate(`/campagnes/editLead/${id}`);
+    };
+
     const [campagne, setCampagne] = useState({
         id: id,
         nom: "",
@@ -67,6 +75,17 @@ const ViewCampagne = () => {
             .catch((error) => {
                 console.log(error);
             });
+    };
+
+    const deleteLead = (e, id) => {
+        e.preventDefault();
+        LeadService.deleteLead(id).then((res) => {
+            if(leads){
+                setLeads((prevElement) => {
+                    return prevElement.filter((lead) => lead.id !== id);
+                });
+            }
+        });
     };
 
     return (
@@ -150,8 +169,8 @@ const ViewCampagne = () => {
                                     <td>{lead.profession}</td>
                                     <td>{lead.genre}</td>
                                     <td className='cellAction'>
-                                        <button className="viewButton">View</button>
-                                        <button className="deleteButton">Delete</button>
+                                        <button className="viewButton" onClick={(e, id) => editLead(e, lead.id)}> <RemoveRedEyeIcon/> </button>
+                                        <button className="deleteButton" onClick={(e, id) => deleteLead(e, lead.id)}> <DeleteOutlineIcon/> </button>
                                     </td>
                                 </tr>
                             ))}

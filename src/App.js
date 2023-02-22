@@ -15,6 +15,7 @@ import Opportunity from "./pages/opportunity/Opportunity";
 import EditContact from "./pages/contact/EditContact";
 import Campagne from "./pages/campagne/Campagne";
 import ViewCampagne from "./pages/campagne/ViewCampagne";
+import ViewLead from "./pages/campagne/ViewLead";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route path="campagnes">
               <Route index element={<Campagne />} />
               <Route path="editCampagne/:id" element={<ViewCampagne />} />
+              <Route path="editLead/:id" element={<ViewLead />} />
             </Route>
           </Route>
           {/* <Route path="/register" element={<Register />} /> */}

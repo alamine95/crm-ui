@@ -1,10 +1,10 @@
-.editContact{
+.editLead{
     width: 100%;
     display: flex;
 
-    .editContactContainer{
+    .editLeadContainer{
         flex: 6;
-         
+
         .top,
         .bottom{
             -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
@@ -13,9 +13,9 @@
             margin: 20px;
             display: flex;
 
-           .modalbtn{
-            margin: 10px;
-           }
+            .modalbtn{
+                margin: 10px;
+            }
 
             h1{
                 color: lightgray;
@@ -42,7 +42,7 @@
                     display: flex;
                     flex-wrap: wrap;
                     gap: 30px;
-                    justify-content: space-around;
+                    justify-content: space-between;
 
                     .formInput{
                         width: 40%;
@@ -77,6 +77,10 @@
                         margin-top: 10px;
                     }
 
+                    .btnUpdate:hover{
+                        background-color: rgb(33, 207, 207);
+                    }
+
                     .btnClear{
                         width: 150px;
                         padding: 10px;
@@ -88,22 +92,12 @@
                         cursor: pointer;
                         margin-top: 10px;
                     }
+
+                    .btnClear:hover{
+                        background-color: rgb(179, 62, 85);
+                    }
                 }
             }
-            
-
         }
-
-        .opportuniteCard{
-            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-            padding: 10px;
-            margin: 20px;
-            display: flex;
-            gap: 20px;
-        }
-
     }
-
-    
 }

@@ -2,6 +2,8 @@ import axios from "axios";
 
 const OPPORTUNITE_API_BASE_URI = "http://localhost:3001/api/v1/opportunites";
 
+const OPPORTUNITE_CONTACT_API_BASE_URI = "http://localhost:3001/api/v1/opportunites/contact"
+
 class OpportuniteService {
     saveOpportunite(opportunite){
         return axios.post(OPPORTUNITE_API_BASE_URI, opportunite);
@@ -13,6 +15,10 @@ class OpportuniteService {
 
     getOpportuniteById(id){
         return axios.get(OPPORTUNITE_API_BASE_URI + "/" +id);
+    }
+
+    getOpportuniteByContactId(id){
+        return axios.get(OPPORTUNITE_CONTACT_API_BASE_URI + "/" +id);
     }
 
     updateOpportunite(opportunite, id){
