@@ -7,6 +7,7 @@ import RendezVousService from '../../services/RendezVousService';
 import './listeRendezVous.scss';
 import { useState, useEffect } from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 
 const ListeRendezVous = () => {
 
@@ -35,11 +36,12 @@ const ListeRendezVous = () => {
             <div className="listeRendezVousContainer">
                 <NavbarContact />
                 <div className="top">
+                    Rendez-Vous
                     <div className="modalbtn"></div>
                 </div>
                 <div className="datatable">
                     <div className="datatableTitle">
-                        Add New Contact
+                        Liste des Rendez Vous
                         <Link to="/contacts/new" className="link">
                             Add New
                         </Link>
@@ -51,6 +53,7 @@ const ListeRendezVous = () => {
                                 <th>Date</th>
                                 <th>Heure</th>
                                 <th>Object</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         {!loading &&(
@@ -60,9 +63,9 @@ const ListeRendezVous = () => {
                                     <td>{rv.id}</td>
                                     <td>{rv.date}</td>
                                     <td>{rv.heure}</td>
-                                    <td>Rencontrer les client pour plus d'info</td>
+                                    <td>Rencontrer client...</td>
                                     <td className="cellAction">
-                                        <button className="viewButton">View</button>
+                                        <button className="viewButton"><VisibilityOutlinedIcon/></button>
                                         <button className="deleteButton"><DeleteIcon className="icon"/></button>
                                     </td>
                                     </tr>
