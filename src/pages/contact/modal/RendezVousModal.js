@@ -24,7 +24,7 @@ const RendezVousModal = ({ show, handleClose}) => {
     date: "",
 	  heure: "",
     contactId: ""
-  })
+  });
 
   const handleChange = event => {
     setFormData({
@@ -99,7 +99,8 @@ const RendezVousModal = ({ show, handleClose}) => {
                   ))}
                 </select>
               )}
-              <MDBBtn type='submit' className='mb-4' onClick={saveRendezVous} block>
+              <MDBBtn type='submit' className='mb-4' onClick={() => 
+                {saveRendezVous(); handleChange();}} block>
                 Save Rendez Vous
               </MDBBtn>
               <ToastContainer autoClose={2000}/>

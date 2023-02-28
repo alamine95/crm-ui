@@ -1,0 +1,81 @@
+.listeRendezVous{
+    display: flex;
+    width: 100%;
+
+    .listeRendezVousContainer{
+        flex: 6;
+
+        .top{
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+            padding: 10px;
+            margin: 50px;
+            display: flex;
+
+            .modalbtn{
+                margin: 10px;
+            }
+        }
+
+        .datatable{
+            height: 600px;
+            padding: 20px;
+            margin: 50px;
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+
+            .datatableTitle{
+                width: 100%;
+                font-size: 24px;
+                color: gray;
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .link{
+                    text-decoration: none;
+                    color: green;
+                    font-style: 16px;
+                    font-weight: 400;
+                    border: 1px solide green;
+                    padding: 5px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+            }
+
+            .cellAction{
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                .viewButton{
+                    padding: 2px 5px;
+                    border-radius: 5px;
+                    background-color: darkblue;
+                    color: white;
+                    border: 1px dotted rgba(250, 253, 251);
+                    cursor: pointer;
+                }
+
+                .viewButton:hover{
+                    background-color: rgb(63, 63, 231);
+                }
+
+                .deleteButton{
+                    padding: 2px 5px;
+                    border-radius: 5px;
+                    background-color: crimson;
+                    color: white;
+                    border: 1px dotted rgb(250, 253, 251);
+                    cursor: pointer;
+                }
+
+                .deleteButton:hover{
+                    background-color: rgb(250, 48, 49);
+                }
+            }
+        }
+    }
+}

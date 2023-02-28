@@ -20,6 +20,8 @@ import OpportuniteService from '../../services/OpportuniteService';
 import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 import TacheService from '../../services/TacheService';
 import RendezVousService from '../../services/RendezVousService';
+import NoteService from '../../services/NoteService';
+import AssignmentOutlinedIcon from '@mui/icons-material/AssignmentOutlined';
 
 const EditContact = () => {
 
@@ -57,6 +59,7 @@ const EditContact = () => {
     const [opportunites, setOpportunites] = useState(null);
     const [taches, setTaches] = useState(null);
     const [rendezVous, setRendezVous] = useState(null);
+    const [notes, setNotes] = useState(null);
 
     const handleChange = (e) => {
         const value = e.target.value;
@@ -110,6 +113,19 @@ const EditContact = () => {
             try {
                 const response = await ContactService.getContactById(contact.id);
                 setContact(response.data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await NoteService.getNoteByContactId(contact.id);
+                setNotes(response.data);
+                console.log(response);
             } catch (error) {
                 console.log(error);
             }
@@ -223,13 +239,13 @@ const EditContact = () => {
 
                     {!loading && (
                         <Card style={{ width: '16rem' }}>
-                        <Card.Header> <h3>Tache</h3> </Card.Header>
+                        <Card.Header> <h3>Tache <AssignmentOutlinedIcon/></h3> </Card.Header>
                         {taches.map((tache) => (
                             <ListGroup variant="flush">
                                 <ListGroup.Item><strong>Object:</strong> {tache.object}</ListGroup.Item>
                                 <ListGroup.Item><strong>Date Echeance:</strong> {tache.dateEcheance}</ListGroup.Item>
                                 <ListGroup.Item><strong>Etape:</strong> {tache.etape}</ListGroup.Item>
-                                <ListGroup.Item><strong>Priorite</strong> {tache.priorite}</ListGroup.Item>
+                                <ListGroup.Item><strong>Priorite:</strong> {tache.priorite}</ListGroup.Item>
                             </ListGroup>
                         ))}
                         </Card>
@@ -247,14 +263,16 @@ const EditContact = () => {
                         </Card>
                     )}
 
-                    <Card style={{ width: '16rem' }}>
-                        <Card.Header> <h3>Remarque <CreateOutlinedIcon/></h3></Card.Header>
-                        <ListGroup variant="flush">
-                            <ListGroup.Item>Cras justo odio</ListGroup.Item>
-                            <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                            <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-                        </ListGroup>
-                    </Card>
+                    {!loading && (
+                        <Card style={{ width: '16rem' }}>
+                            <Card.Header> <h3>Remarque <CreateOutlinedIcon/></h3></Card.Header>
+                            {notes.map((note) => (
+                                <ListGroup variant="flush">
+                                <ListGroup.Item><strong>Remarque:</strong> {note.remarque}</ListGroup.Item>
+                                </ListGroup>
+                            ))}
+                        </Card>
+                    )}
                 </div>
 
             </div>

@@ -23,7 +23,7 @@ const NavbarContact = () => {
                         <div className="dropdown">
                             <span>Rendez-Vous</span>
                             <div className="dropdown-content">
-                                <Link>Afficher</Link><br />
+                                <Link to="listerendezvous">Afficher</Link><br />
                                 <Link>Planifier</Link>
                             </div>
                         </div>

@@ -12,16 +12,20 @@ import {
   } from 'mdb-react-ui-kit';
 import { toast, ToastContainer } from 'react-toastify';
 import CampagneService from '../../../services/CampagneService';
+import { useNavigate } from 'react-router-dom';
 
 const AddCampagne = ({ show, handleClose}) => {
 
     const [formData, setFormData] =useState({
         nom: "",
         dateDebut: "",
+        chiffreAttendue: "",
         type: "",
         etape: "",
-        dateFin: ""
+        fin: ""
     })
+
+    const navigate = useNavigate();
 
     const handleChange = event => {
         setFormData({
@@ -36,6 +40,7 @@ const AddCampagne = ({ show, handleClose}) => {
         .then((response) => {
           console.log(response);
           toast.success('Campagne ajouter close modal');
+          navigate("/campagnes");
         })
         .catch((error) => {
           console.log(error);
@@ -52,7 +57,7 @@ const AddCampagne = ({ show, handleClose}) => {
             chiffreAttendue: "",
             type: "",
             etape: "",
-            dateFin: ""
+            fin: ""
         });
     };
 
@@ -100,13 +105,15 @@ const AddCampagne = ({ show, handleClose}) => {
                       <option value="Marketing">Marketing</option>
                       <option value="Commercial">Commerciale</option>
                   </select>
-                  <MDBInput type='date' wrapperClass='mb-4' label='date fin' name='dateFin' 
+                  <MDBInput type='date' wrapperClass='mb-4' label='fin' name='fin' 
                     required
-                    value={formData.dateFin}
+                    value={formData.fin}
                     onChange={handleChange}
                   />
                   
-                  <MDBBtn type='submit' className='mb-4' onClick={saveCampagne} block>
+                  <MDBBtn type='submit' className='mb-4' onClick={() => 
+                    {saveCampagne(); handleClose();}} 
+                    block>
                     Create
                   </MDBBtn>
                   <ToastContainer autoClose={2000}/>

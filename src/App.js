@@ -16,6 +16,7 @@ import EditContact from "./pages/contact/EditContact";
 import Campagne from "./pages/campagne/Campagne";
 import ViewCampagne from "./pages/campagne/ViewCampagne";
 import ViewLead from "./pages/campagne/ViewLead";
+import ListeRendezVous from "./pages/contact/ListeRendezVous";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
               <Route path="new" element={<AddContact />} /> 
               <Route path="editContact/:id" element={<EditContact />} />
               <Route path="opportunity" element={<Opportunity />} />
+              <Route path="listerendezvous" element={<ListeRendezVous />} />
             </Route>
             <Route path="campagnes">
               <Route index element={<Campagne />} />
