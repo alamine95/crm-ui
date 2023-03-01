@@ -1,6 +1,6 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import NavbarContact from '../../components/navbar/NavbarContact';
 import SideBar from '../../components/sidebar/SideBar';
 import RendezVousService from '../../services/RendezVousService';
@@ -13,6 +13,12 @@ const ListeRendezVous = () => {
 
     const [loading, setLoading] = useState(true);
     const [rendezVous, setRendezVous] = useState(null);
+    const navigate = useNavigate();
+
+    const editRendezVous = (e, id) => {
+        e.preventDefault();
+        navigate(`/contacts/editRendezVous/${id}`);
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -63,9 +69,9 @@ const ListeRendezVous = () => {
                                     <td>{rv.id}</td>
                                     <td>{rv.date}</td>
                                     <td>{rv.heure}</td>
-                                    <td>Rencontrer client...</td>
+                                    <td>{rv.object}</td>
                                     <td className="cellAction">
-                                        <button className="viewButton"><VisibilityOutlinedIcon/></button>
+                                        <button className="viewButton" onClick={(e, id) => editRendezVous(e, rv.id)}><VisibilityOutlinedIcon/></button>
                                         <button className="deleteButton"><DeleteIcon className="icon"/></button>
                                     </td>
                                     </tr>

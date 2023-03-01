@@ -18,6 +18,7 @@ import ViewCampagne from "./pages/campagne/ViewCampagne";
 import ViewLead from "./pages/campagne/ViewLead";
 import ListeRendezVous from "./pages/contact/ListeRendezVous";
 import ListeOpportunite from "./pages/contact/ListeOpportunite";
+import EditRendezVous from "./pages/contact/EditRendezVous";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
               <Route path="opportunity" element={<Opportunity />} />
               <Route path="listeopportunity" element={<ListeOpportunite />} />
               <Route path="listerendezvous" element={<ListeRendezVous />} />
+              <Route path="editRendezVous/:id" element={<EditRendezVous />} />
             </Route>
             <Route path="campagnes">
               <Route index element={<Campagne />} />

@@ -204,11 +204,26 @@ const EditContact = () => {
                             </div>
                             <div className="formInput">
                                 <label>Type de Contact:</label>
-                                <input type="text" value={contact.type} name="type" onChange={(e) => handleChange(e)} />
+                                 <select className="form-select mb-4" aria-label="Default select example"
+                                    name="type"
+                                    value={contact.type}
+                                    onChange={(e) => handleChange(e)}>
+                                        <option selected>{contact.type}</option>
+                                        <option value="Prospect">Prospect</option>
+                                        <option value="Contact">Contact</option>
+                                        <option value="Client">Client</option>
+                                 </select>
                             </div>
                             <div className="formInput">
                                 <label>Genre:</label>
-                                <input type="text" value={contact.genre} name="genre" onChange={(e) => handleChange(e)} />
+                                    <select className="form-select mbb-4" aria-label="Default select example"
+                                        name="genre"
+                                        value={contact.genre}
+                                        onChange={(e) => handleChange(e)}>
+                                            <option selected>{contact.genre}</option>
+                                            <option value="Masculin">Masculin</option>
+                                            <option value="Feminin">Feminin</option>
+                                    </select>
                             </div>
                             <div className="formInput">
                                 <label>Addresse</label>

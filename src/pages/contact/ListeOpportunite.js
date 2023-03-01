@@ -35,11 +35,12 @@ const ListeOpportunite = () => {
             <div className="listeOpportuniteContainer">
                 <NavbarContact />
                 <div className="top">
+                    <h3>Liste des Opportunite</h3>
                     <div className="modalbtn"></div>
                 </div>
                 <div className="datatable">
                     <div className="datatableTitle">
-                        Liste des Rendez Vous
+                        Liste des Opportunite
                         <Link to="/contacts/new" className="link">
                             Add New
                         </Link>
