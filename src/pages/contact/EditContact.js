@@ -242,11 +242,13 @@ const EditContact = () => {
                         <Card.Header> <h3>Opportunite <HourglassTopIcon/> </h3> </Card.Header>
                         {opportunites.map((opportunite) =>(
                             <ListGroup variant="flush">
-                                <ListGroup.Item><strong>Nom:</strong> {opportunite.nom}</ListGroup.Item>
-                                <ListGroup.Item><strong>Type:</strong> {opportunite.type}</ListGroup.Item>
-                                <ListGroup.Item><strong>Etape:</strong> {opportunite.etape}</ListGroup.Item>
-                                <ListGroup.Item><strong>Montant:</strong> {opportunite.montant}</ListGroup.Item>
-                                <ListGroup.Item><strong>Date:</strong> {opportunite.date}</ListGroup.Item>
+                                <ListGroup.Item><strong>Matricule:</strong> {opportunite.matricule}</ListGroup.Item>
+                                <ListGroup.Item><strong>MEC:</strong> {opportunite.mec}</ListGroup.Item>
+                                <ListGroup.Item><strong>Valeur Venal:</strong> {opportunite.valVenal}</ListGroup.Item>
+                                <ListGroup.Item><strong>Valeur Neuf:</strong> {opportunite.valNeuf}</ListGroup.Item>
+                                <ListGroup.Item><strong>Date Debut:</strong> {opportunite.debut}</ListGroup.Item>
+                                <ListGroup.Item><strong>Date Fin:</strong> {opportunite.fin}</ListGroup.Item>
+                                <ListGroup.Item><strong>Prime:</strong> {opportunite.prime}</ListGroup.Item>
                             </ListGroup>
                         ))}
                         </Card>
@@ -273,6 +275,7 @@ const EditContact = () => {
                             <ListGroup variant="flush">
                                 <ListGroup.Item><strong>Date:</strong> {rv.date}</ListGroup.Item>
                                 <ListGroup.Item><strong>Heure:</strong> {rv.heure}</ListGroup.Item>
+                                <ListGroup.Item><strong>Object:</strong> {rv.object}</ListGroup.Item>
                         </ListGroup>
                         ))}
                         </Card>

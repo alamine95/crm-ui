@@ -59,9 +59,27 @@ const SendEmailModal = ({show, handleClose}) => {
           </MDBModalHeader>
           <MDBModalBody>
             <form>
-              <MDBInput type='email' wrapperClass='mb-4' label='Destinataire' name='destinataire' value={mail.destinataire} onChange={(e) => handleChange(e)}/>
-              <MDBInput type='text' wrapperClass='mb-4' label='Object' name='object' value={mail.object} onChange={(e) => handleChange(e)}/>
-              <MDBInput type='text' wrapperClass='mb-4' label='text' name='text' value={mail.text} onChange={(e) => handleChange(e)}/>
+              <MDBInput type='email' wrapperClass='mb-4' label='Destinataire' 
+                name='destinataire' 
+                value={mail.destinataire} 
+                onChange={(e) => handleChange(e)}
+              />
+              <MDBInput type='text' wrapperClass='mb-4' label='Object' 
+                name='object' 
+                value={mail.object} 
+                onChange={(e) => handleChange(e)}
+              />
+
+              <div className="form-floating">
+                <textarea className="form-control" placeholder="Leave a comment here"
+                  name="text"
+                  value={mail.text} 
+                  onChange={(e) => handleChange(e)}
+                  ></textarea>
+                  <label for="floatingTextarea">Message</label>
+              </div>
+              <br />
+
               <MDBInput type='file' wrapperClass='mb-4' />
               <MDBBtn type='submit' className='mb-4' onClick={sendEmail} block>
                 Send Email

@@ -3,7 +3,7 @@ import Navbar from '../../components/navbar/Navbar';
 import NavbarContact from '../../components/navbar/NavbarContact';
 import SideBar from '../../components/sidebar/SideBar';
 import Table from 'react-bootstrap/Table';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './listeOpportunite.scss';
 import OpportuniteService from '../../services/OpportuniteService';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -13,6 +13,12 @@ const ListeOpportunite = () => {
 
     const [loading, setLoading] = useState(true);
     const [opportunites, setOpportunites] = useState(null);
+    const navigate = useNavigate();
+
+    const editOpportunity = (e, id) => {
+        e.preventDefault();
+        navigate(`/contacts/editOpportunity/${id}`);
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -49,11 +55,11 @@ const ListeOpportunite = () => {
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Nom</th>
-                                <th>Type</th>
-                                <th>Etape</th>
-                                <th>Montant</th>
-                                <th>Date</th>
+                                <th>Matricule</th>
+                                <th>MEC</th>
+                                <th>Valeur Venal</th>
+                                <th>Valeur Neuf</th>
+                                <th>Prime</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -62,13 +68,13 @@ const ListeOpportunite = () => {
                                 {opportunites.map((opportunite) => (
                                     <tr key={opportunite.id}>
                                         <td>{opportunite.id}</td>
-                                        <td>{opportunite.nom}</td>
-                                        <td>{opportunite.type}</td>
-                                        <td>{opportunite.etape}</td>
-                                        <td>{opportunite.montant}</td>
-                                        <td>{opportunite.date}</td>
+                                        <td>{opportunite.matricule}</td>
+                                        <td>{opportunite.mec}</td>
+                                        <td>{opportunite.valVenal}</td>
+                                        <td>{opportunite.valNeuf}</td>
+                                        <td>{opportunite.prime}</td>
                                         <td className="cellAction">
-                                            <button className="viewButton"> <VisibilityOutlinedIcon/></button>
+                                            <button className="viewButton" onClick={(e, id) => editOpportunity(e, opportunite.id)}> <VisibilityOutlinedIcon/></button>
                                             <button className="deleteButton"> <DeleteIcon/></button>
                                         </td>
                                     </tr>

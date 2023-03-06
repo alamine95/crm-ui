@@ -23,6 +23,7 @@ const RendezVousModal = ({ show, handleClose}) => {
   const [formData, setFormData] = useState({
     date: "",
 	  heure: "",
+    object: "",
     contactId: ""
   });
 
@@ -38,6 +39,7 @@ const RendezVousModal = ({ show, handleClose}) => {
     setFormData({
       date: "",
 	    heure: "",
+      object: "",
       contactId: ""
     })
   }
@@ -89,6 +91,17 @@ const RendezVousModal = ({ show, handleClose}) => {
                 value={formData.heure}
                 onChange={handleChange}
               />
+
+              <div className="form-floating">
+                <textarea className="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                  name="object"
+                  value={formData.object}
+                  onChange={handleChange}
+                ></textarea>
+                <label for="floatingTextarea">Objects</label>
+              </div>
+              <br />
+
               {!loading && (
                 <select className="form-select mb-4" aria-label="Default select example" name="contactId"
                   value={formData.contactId}

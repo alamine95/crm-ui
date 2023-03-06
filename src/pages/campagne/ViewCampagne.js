@@ -128,13 +128,37 @@ const ViewCampagne = () => {
                                 <label>Telephone:</label>
                                 <input type="text" value={campagne.type} name="telephone" onChange={(e) => handleChange(e)} />
                             </div>
-                            <div className="formInput">
+                            {/* <div className="formInput">
                                 <label>Type de Campagne:</label>
                                 <input type="text" value={campagne.type} name="type" onChange={(e) => handleChange(e)} />
-                            </div>
+                            </div> */}
                             <div className="formInput">
+                                <label>Type de Campagne:</label>
+                                    <select className="form-select mbb-4" aria-label="Default select example"
+                                        name="type"
+                                        value={campagne.type}
+                                        onChange={(e) => handleChange(e)}>
+                                            <option selected>{campagne.type}</option>
+                                            <option value={campagne.type}>{campagne.type}</option>
+                                            <option value="Commerciale">Commerciale</option>
+                                            <option value="Marketing">Marketing</option>
+                                    </select>
+                            </div>
+                            {/* <div className="formInput">
                                 <label>Etape</label>
                                 <input type="text" value={campagne.etape} name="etape" onChange={(e) => handleChange(e)} />
+                            </div> */}
+                            <div className="formInput">
+                                <label>Etape:</label>
+                                    <select className="form-select mbb-4" aria-label="Default select example"
+                                        name="type"
+                                        value={campagne.etape}
+                                        onChange={(e) => handleChange(e)}>
+                                            <option selected>{campagne.etape}</option>
+                                            <option value={campagne.etape}>{campagne.etape}</option>
+                                            <option value="Encour">Encour</option>
+                                            <option value="Terminer">Terminer</option>
+                                    </select>
                             </div>
                             <div className="formInput">
                                 <label>Date Fin</label>

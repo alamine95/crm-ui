@@ -1,10 +1,10 @@
-.editContact{
+.editOpportunite{
     width: 100%;
     display: flex;
 
-    .editContactContainer{
+    .editOpportuniteContainer{
         flex: 6;
-         
+
         .top,
         .bottom{
             -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
@@ -13,13 +13,14 @@
             margin: 20px;
             display: flex;
 
-           .modalbtn{
-            margin: 10px;
-           }
+            .modalBtn{
+                margin: 10px;
+            }
 
             h1{
                 color: lightgray;
                 font-size: 20px;
+                text-align: 20px;
                 text-align: center;
             }
 
@@ -63,13 +64,6 @@
                             border: none;
                             border-bottom: 1px solid;
                         }
-
-                        select{
-                            width: 100%;
-                            padding: 5px;
-                            border: none;
-                            border-bottom: 1px solid;
-                        }
                     }
 
                     .btnUpdate{
@@ -84,6 +78,10 @@
                         margin-top: 10px;
                     }
 
+                    .btnUpdate:hover{
+                        background-color: rgb(14, 182, 182);
+                    }
+
                     .btnClear{
                         width: 150px;
                         padding: 10px;
@@ -95,22 +93,12 @@
                         cursor: pointer;
                         margin-top: 10px;
                     }
+
+                    .btnClear:hover{
+                        background-color: rgb(226, 76, 106);
+                    }
                 }
             }
-            
-
         }
-
-        .opportuniteCard{
-            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-            padding: 10px;
-            margin: 20px;
-            display: flex;
-            gap: 20px;
-        }
-
     }
-
-    
 }
