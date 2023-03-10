@@ -8,6 +8,7 @@ import Table from 'react-bootstrap/Table';
 import LeadService from '../../services/LeadService';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import Update from "../../images/Update.png";
 
 
 const ViewCampagne = () => {
@@ -98,40 +99,24 @@ const ViewCampagne = () => {
                 </div> */}
                 <div className="bottom">
                     <div className="left">
-                        <img src={
-                            file
-                                ? URL.createObjectURL(file)
-                                : "https://icon-library.com/images/no-image-icon-0.jpg"
-                        } alt="" />
+                        <img src={Update} alt="" />
                     </div>
                     <div className="right">
                         <form action="">
+                            
                             <div className="formInput">
-                                <label htmlFor="">
-                                    Image:
-                                </label>
-                                <input type="file" id="file" style={{ display: "none" }} />
-                            </div>
-                            <div className="formInput">
-                                <label htmlFor="">Nom:</label>
+                                <label htmlFor="">Nom Campagne:</label>
                                 <input type="text" name="nom" value={campagne.nom} onChange={(e) => handleChange(e)} />
                             </div>
                             <div className="formInput">
-                                <label htmlFor="">Prenom:</label>
+                                <label htmlFor="">Date Debut:</label>
                                 <input type="date" value={campagne.dateDebut} name="dateDebut" onChange={(e) => handleChange(e)}></input>
                             </div>
                             <div className="formInput">
-                                <label htmlFor="">Email:</label>
+                                <label htmlFor="">Chiffre Attendue:</label>
                                 <input type="number" value={campagne.chiffreAttendue} name="chiffreAttendue" onChange={(e) => handleChange(e)} />
                             </div>
-                            <div className="formInput">
-                                <label>Telephone:</label>
-                                <input type="text" value={campagne.type} name="telephone" onChange={(e) => handleChange(e)} />
-                            </div>
-                            {/* <div className="formInput">
-                                <label>Type de Campagne:</label>
-                                <input type="text" value={campagne.type} name="type" onChange={(e) => handleChange(e)} />
-                            </div> */}
+                            
                             <div className="formInput">
                                 <label>Type de Campagne:</label>
                                     <select className="form-select mbb-4" aria-label="Default select example"
@@ -139,23 +124,17 @@ const ViewCampagne = () => {
                                         value={campagne.type}
                                         onChange={(e) => handleChange(e)}>
                                             <option selected>{campagne.type}</option>
-                                            <option value={campagne.type}>{campagne.type}</option>
-                                            <option value="Commerciale">Commerciale</option>
                                             <option value="Marketing">Marketing</option>
                                     </select>
                             </div>
-                            {/* <div className="formInput">
-                                <label>Etape</label>
-                                <input type="text" value={campagne.etape} name="etape" onChange={(e) => handleChange(e)} />
-                            </div> */}
+                            
                             <div className="formInput">
-                                <label>Etape:</label>
+                                <label>Etape de la Campagne:</label>
                                     <select className="form-select mbb-4" aria-label="Default select example"
-                                        name="type"
+                                        name="etape"
                                         value={campagne.etape}
                                         onChange={(e) => handleChange(e)}>
                                             <option selected>{campagne.etape}</option>
-                                            <option value={campagne.etape}>{campagne.etape}</option>
                                             <option value="Encour">Encour</option>
                                             <option value="Terminer">Terminer</option>
                                     </select>
@@ -163,6 +142,9 @@ const ViewCampagne = () => {
                             <div className="formInput">
                                 <label>Date Fin</label>
                                 <input type="date" value={campagne.dateFin} name="dateFin" onChange={(e) => handleChange(e)} />
+                            </div>
+                            <div className='formInput'>
+
                             </div>
                             <button className="btnUpdate" onClick={updateCampagne}>Update</button>
                             <button className="btnClear" >Cancel</button>

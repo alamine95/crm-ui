@@ -47,9 +47,9 @@ const ListeOpportunite = () => {
                 <div className="datatable">
                     <div className="datatableTitle">
                         Liste des Opportunite
-                        <Link to="/contacts/new" className="link">
+                        {/* <Link to="/contacts/new" className="link">
                             Add New
-                        </Link>
+                        </Link> */}
                     </div>
                     <Table striped>
                         <thead>

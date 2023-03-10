@@ -127,8 +127,7 @@ const AddLeadModal = ({ show, handleClose}) => {
                       ))}
                     </select>
                   )}
-                  <MDBBtn type='submit' className='mb-4' onClick={() => 
-                    {saveLead(); handleClose();}} block>
+                  <MDBBtn type='submit' className='mb-4' onClick={saveLead} block>
                     Create
                   </MDBBtn>
                   <ToastContainer autoClose={2000}/>

@@ -80,7 +80,7 @@ const SendEmailModal = ({show, handleClose}) => {
               </div>
               <br />
 
-              <MDBInput type='file' wrapperClass='mb-4' />
+              {/* <MDBInput type='file' wrapperClass='mb-4' name="file" value={mail.file} onChange={(e) => handleChange(e)} /> */}
               <MDBBtn type='submit' className='mb-4' onClick={sendEmail} block>
                 Send Email
               </MDBBtn>

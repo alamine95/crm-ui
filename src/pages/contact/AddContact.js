@@ -1,13 +1,14 @@
 import React from 'react'
 import "./addContact.scss";
 import SideBar from '../../components/sidebar/SideBar';
-import DriveFolderUploadOutlinedIcon from '@mui/icons-material/DriveFolderUploadOutlined';
 import { useState } from 'react';
 import NavbarContact from '../../components/navbar/NavbarContact';
 import ContactService from '../../services/ContactService';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from 'react-router-dom';
+import Update from "../../images/Update.png";
+import ContactImage from "../../images/ContactImage.jpg";
 
 const AddContact = () => {
     const [contact, setContact] = useState({
@@ -68,20 +69,10 @@ const AddContact = () => {
                 </div>
                 <div className="bottom">
                     <div className="left">
-                        <img src={
-                            file
-                                ? URL.createObjectURL(file)
-                                : "https://icon-library.com/images/no-image-icon-0.jpg"
-                        } alt="" />
+                        <img src={ContactImage} alt="" />
                     </div>
                     <div className="right">
                         <form action="">
-                            <div className="formInput">
-                                <label htmlFor="file">
-                                    Image: <DriveFolderUploadOutlinedIcon className="icon" />
-                                </label>
-                                <input type="text" id="file" style={{ display: "none" }} />
-                            </div>
                             <div className="formInput">
                                 <label>Nom:</label>
                                 <input type="text" name="nom" placeholder="nom"
@@ -140,6 +131,7 @@ const AddContact = () => {
                                     onChange={(e) => handleChange(e)}
                                     required />
                             </div>
+                            <div className="formInput"></div>
                             <button className="btnSave" onClick={saveContact}>Send</button>
                             <ToastContainer autoClose={2000} />
                             <button className="btnClear" onClick={reset}>Clear</button>

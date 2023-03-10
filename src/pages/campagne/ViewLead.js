@@ -4,6 +4,8 @@ import NavbarContact from '../../components/navbar/NavbarContact';
 import SideBar from '../../components/sidebar/SideBar';
 import LeadService from '../../services/LeadService';
 import './viewLead.scss';
+//import Update from "../../images/Update.png";
+import Update from "../../images/Update.png";
 
 const ViewLead = () => {
 
@@ -57,7 +59,7 @@ const ViewLead = () => {
 
                 <div className="bottom">
                     <div className="left">
-
+                        <img src={Update} alt="" />
                     </div>
                     <div className="right">
                         <form action="">

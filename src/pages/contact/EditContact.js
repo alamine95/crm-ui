@@ -22,6 +22,7 @@ import TacheService from '../../services/TacheService';
 import RendezVousService from '../../services/RendezVousService';
 import NoteService from '../../services/NoteService';
 import AssignmentOutlinedIcon from '@mui/icons-material/AssignmentOutlined';
+import Update from "../../images/Update.png";
 
 const EditContact = () => {
 
@@ -172,20 +173,16 @@ const EditContact = () => {
                 </div>
                 <div className="bottom">
                     <div className="left">
-                        <img src={
-                            file
-                                ? URL.createObjectURL(file)
-                                : "https://icon-library.com/images/no-image-icon-0.jpg"
-                        } alt="" />
+                        <img src={Update} alt="" />
                     </div>
                     <div className="right">
                         <form action="">
-                            <div className="formInput">
+                            {/* <div className="formInput">
                                 <label htmlFor="">
                                     Image: <DriveFolderUploadOutlinedIcon className="icon" />
                                 </label>
                                 <input type="file" id="file" style={{ display: "none" }} />
-                            </div>
+                            </div> */}
                             <div className="formInput">
                                 <label htmlFor="">Nom:</label>
                                 <input type="text" name="nom" value={contact.nom} onChange={(e) => handleChange(e)} />
@@ -229,6 +226,7 @@ const EditContact = () => {
                                 <label>Addresse</label>
                                 <input type="text" value={contact.adresse} name="adresse" onChange={(e) => handleChange(e)} />
                             </div>
+                            <div className="formInput"></div>
                             <button className="btnUpdate" onClick={updateContact}>Update</button>
                             <ToastContainer autoClose={2000} />
                             <button className="btnClear" onClick={() => navigate("/contacts")}>Cancel</button>

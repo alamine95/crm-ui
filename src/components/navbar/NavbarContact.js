@@ -48,8 +48,8 @@ const NavbarContact = () => {
                             <span>Contact</span>
                             <div className="dropdown-content">
                                 <Link to="/contacts/new">Creer</Link><br />
-                                <Link to="">Importer</Link><br />
-                                <Link to="/contacts">Lister</Link>
+                                <Link to="/contacts">Afficher</Link><br />
+                                <Link to="">Importer</Link>
                             </div>
                         </div>
 
