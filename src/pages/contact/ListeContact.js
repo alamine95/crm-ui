@@ -75,7 +75,7 @@ const ListeContact = () => {
     <>
       <div className="listeContact">
         <div className="listeContactContainer">
-          <div className="top">
+          {/* <div className="top">
             <div className="modalbtn">
               <MDBBtn onClick={handleShowTacheModal}>Tache</MDBBtn>
               <TacheModal show={showTache} handleClose={handleCloseTacheModal} />
@@ -92,7 +92,7 @@ const ListeContact = () => {
               <MDBBtn onClick={handleShowOpportuniteModal}>Opportunite</MDBBtn>
               <OpportuniteModal show={showOpportunite} handleClose={handleCloseOpportuniteModal} />
             </div>
-          </div>
+          </div> */}
           <div className="datatable">
             <div className="datatableTitle">
               Add New Contact

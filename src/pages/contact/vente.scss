@@ -1,0 +1,75 @@
+.listeVentes{
+    display: flex;
+    width: 100%;
+
+    .listeVentesContainer{
+        flex: 6;
+
+        .top{
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+            padding: 10px;
+            margin: 50px;
+            display: flex;
+            align-content: center;
+        }
+
+        .venteTable{
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+            padding: 10px;
+            margin: 50px;
+            display: flex;
+            align-content: center;
+            width: auto;
+            height: 300px;
+            overflow-y: scroll;
+            scrollbar-color: rebeccapurple green;
+
+            .cellAction{
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                .viewButton{
+                    padding: 2px 5px;
+                    border-radius: 5px;
+                    background-color: darkblue;
+                    color: white;
+                    border: 1px dotted rgb(250, 253, 251);
+                    cursor: pointer;
+                }
+
+                .viewButton:hover{
+                    background-color: rgb(87, 87, 179);
+                }
+
+                .deleteButton{
+                    padding: 2px 5px;
+                    border-radius: 5px;
+                    background-color: crimson;
+                    color: white;
+                    border: 1px dotted rgba(250, 253, 251);
+                    cursor: pointer;
+                }
+
+                .deleteButton:hover{
+                    background-color: rgb(143, 11, 37);
+                }
+            }
+        }
+
+        .venteEtape{
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+            padding: 10px;
+            margin: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 15px;
+            width: auto;
+            height: auto;
+        }
+    }
+}

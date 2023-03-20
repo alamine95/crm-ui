@@ -20,6 +20,7 @@ import ListeRendezVous from "./pages/contact/ListeRendezVous";
 import ListeOpportunite from "./pages/contact/ListeOpportunite";
 import EditRendezVous from "./pages/contact/EditRendezVous";
 import EditOpportunite from "./pages/contact/EditOpportunite";
+import Vente from "./pages/contact/Vente";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
               <Route path="editOpportunity/:id" element={<EditOpportunite />} />
               <Route path="listerendezvous" element={<ListeRendezVous />} />
               <Route path="editRendezVous/:id" element={<EditRendezVous />} />
+              <Route path="ventes" element={<Vente />} />
             </Route>
             <Route path="campagnes">
               <Route index element={<Campagne />} />

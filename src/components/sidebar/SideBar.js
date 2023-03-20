@@ -1,4 +1,4 @@
-// import React from 'react'
+import React from 'react';
 import "./sidebar.scss"
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
@@ -10,10 +10,8 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 import AssignmentTurnedInOutlinedIcon from '@mui/icons-material/AssignmentTurnedInOutlined';
 import PermContactCalendarOutlinedIcon from '@mui/icons-material/PermContactCalendarOutlined';
-import AddBusinessOutlinedIcon from '@mui/icons-material/AddBusinessOutlined';
+import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlined';
 import { Link } from "react-router-dom";
-import logo from "../../images/logo.png";
-import logo1 from "../../images/logo1.png";
 import logo2 from "../../images/logo2.png";
 
 export const SideBar = () => {
@@ -47,13 +45,15 @@ export const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <AddBusinessOutlinedIcon className="icon"/>
-                    <span>Opportunity</span>
+                    <ShoppingBasketOutlinedIcon className="icon"/>
+                    <Link to="/contacts/ventes" style={{ textDecoration: "none"}}>
+                        <span>Ventes</span>
+                    </Link>
                 </li>
                 <li>
                     <AssignmentTurnedInOutlinedIcon className="icon"/>
                     <Link to="/campagnes" style={{ textDecoration: "none" }}>
-                        <span>Campagne</span>
+                        <span>Marketing</span>
                     </Link>
                 </li>
                 <p className="title">USEFUL</p>
