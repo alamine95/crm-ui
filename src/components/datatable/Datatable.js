@@ -2,6 +2,7 @@ import React from 'react'
 import "./datatable.scss";
 import { Link } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
+import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 
 const Datatable = () => {
 
@@ -11,18 +12,19 @@ const Datatable = () => {
         <div className="listeUsersContainer">
             <div className="datatable">
               <div className="datatableTitle">
-                Add New User
+                <h3>Add New User <PersonAddAltOutlinedIcon /></h3>
                 <Link to="/users/new" className="link">
-                  Add New
+                  Add New <PersonAddAltOutlinedIcon />
                 </Link>
               </div>
               <Table striped>
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Email</th>
+                    <th>Profile</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -30,6 +32,7 @@ const Datatable = () => {
                   <tr>
                     <td>1</td>
                     <td>Mark</td>
+                    <td>Otto</td>
                     <td>Otto</td>
                     <td>@mdo</td>
                     <td className="cellAction">
@@ -41,6 +44,7 @@ const Datatable = () => {
                     <td>2</td>
                     <td>Jacob</td>
                     <td>Thornton</td>
+                    <td>Thornton</td>
                     <td>@fat</td>
                     <td className="cellAction">
                       <button className="viewButton">View</button>
@@ -50,6 +54,7 @@ const Datatable = () => {
                   <tr>
                     <td>3</td>
                     <td colSpan={2}>Larry the Bird</td>
+                    <td>@twitter</td>
                     <td>@twitter</td>
                     <td className="cellAction">
                       <button className="viewButton">View</button>

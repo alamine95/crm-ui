@@ -11,8 +11,9 @@ import ContactService from '../../services/ContactService';
 import NoteModal from './modal/NoteModal';
 import OpportuniteModal from './modal/OpportuniteModal';
 import { Pagination } from '@mui/material';
-import CreateIcon from '@mui/icons-material/Create';
 import DeleteIcon from '@mui/icons-material/Delete';
+import ContactsOutlinedIcon from '@mui/icons-material/ContactsOutlined';
+import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 
 const ListeContact = () => {
 
@@ -95,9 +96,9 @@ const ListeContact = () => {
           </div> */}
           <div className="datatable">
             <div className="datatableTitle">
-              Add New Contact
+              <h4>Add New Contact &nbsp;<ContactsOutlinedIcon /></h4>
               <Link to="/contacts/new" className="link">
-                Add New
+                Add New <PersonAddAltOutlinedIcon />
               </Link>
             </div>
             <Table striped>

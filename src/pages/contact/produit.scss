@@ -1,0 +1,87 @@
+.listeProduits{
+    display: flex;
+    width: 100%;
+
+    .listeProduitsContainer{
+        flex: 6;
+
+        .top{
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+            padding: 10px;
+            margin: 50px;
+            display: flex;
+
+        }
+
+        .datatable{
+            height: auto;
+            padding: 20px;
+            margin: 50px;
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+
+            .datatableTitle{
+                width: 100%;
+                font-size: 24px;
+                color: gray;
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .link{
+                    text-decoration: none;
+                    color: green;
+                    font-style: 16px;
+                    font-weight: 400;
+                    border: 1px solid green;
+                    padding: 5px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+            }
+
+            .cellAction{
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                .viwButton{
+                    padding: 2px 5px;
+                    border-radius: 5px;
+                    background-color: darkblue;
+                    color: white;
+                    border: 1px dotted rgba(250, 253, 251);
+                    cursor: pointer;
+                }
+
+                .viwButton:hover{
+                    background-color: rgb(63, 63, 231);
+                }
+
+                .deleteButton{
+                    padding: 2px 5px;
+                    border-radius: 5px;
+                    background-color: crimson;
+                    color: white;
+                    border: 1px dotted rgb(250, 253, 251);
+                    cursor: pointer;
+                }
+
+                .deleteButton:hover{
+                    background-color: rgb(250, 49, 49);
+                }
+            }
+
+            .cardCatalogue{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 17px;
+                width: auto;
+                height: auto;
+            
+            }
+        }
+    }
+}

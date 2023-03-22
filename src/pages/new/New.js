@@ -3,6 +3,8 @@ import "./new.scss";
 import SideBar from "../../components/sidebar/SideBar.js";
 import Navbar from "../../components/navbar/Navbar.js";
 import { useState } from "react";
+import AddUser from "../../images/AddUser.jpg";
+import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 
 export const New = () => {
   
@@ -37,15 +39,11 @@ export const New = () => {
       <div className="newContainer">
         <Navbar/>
         <div className="top">
-          <h1>Add new user</h1>
+          <h1>Add new user <PersonAddAltOutlinedIcon /></h1>
         </div>
         <div className="bottom">
           <div className="left">
-            <img src={
-              file
-              ? URL.createObjectURL(file)
-              : "https://icon-library.com/images/no-image-icon-0.jpg"
-            } alt="" />
+            <img src={AddUser} alt="" />
           </div>
           <div className="right">
             <form action="">

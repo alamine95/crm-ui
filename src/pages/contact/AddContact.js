@@ -7,8 +7,8 @@ import ContactService from '../../services/ContactService';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from 'react-router-dom';
-import Update from "../../images/Update.png";
 import ContactImage from "../../images/ContactImage.jpg";
+import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 
 const AddContact = () => {
     const [contact, setContact] = useState({
@@ -65,7 +65,7 @@ const AddContact = () => {
             <div className="addContactsContainer">
                 <NavbarContact />
                 <div className="top">
-                    <h1>Add New Contact</h1>
+                    <h1>Add New Contact <PersonAddAltOutlinedIcon /></h1>
                 </div>
                 <div className="bottom">
                     <div className="left">

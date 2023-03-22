@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card';
 import './vente.scss';
 import DeleteIcon from '@mui/icons-material/Delete';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import CachedOutlinedIcon from '@mui/icons-material/CachedOutlined';
 
 const Vente = () => {
     return (
@@ -13,18 +14,18 @@ const Vente = () => {
             <SideBar />
             <div className="listeVentesContainer">
                 <NavbarContact />
-                {/* <div className="top">
-                    <h3>Opportunite de Ventes encour</h3>
-                </div> */}
+                <div className="top">
+                    <h3>Opportunité De Ventes En Cour <CachedOutlinedIcon /> </h3>
+                </div>
                 <div className="venteTable">
                     <Table striped>
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Username</th>
-                                <th>Action</th>
+                                <th>Nom</th>
+                                <th>Prenom</th>
+                                <th>Nom</th>
+                                <th>Matricule</th>
                             </tr>
                         </thead>
                         <tbody>
